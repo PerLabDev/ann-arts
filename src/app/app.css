@@ -1,0 +1,360 @@
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top left, rgba(252, 236, 226, 0.92), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(193, 154, 212, 0.28), transparent 32%),
+    linear-gradient(180deg, #f8f3ef 0%, #f2e8ec 40%, #e7dfec 100%);
+  color: #1d1d1f;
+  padding: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.app-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.5), transparent 26%),
+    radial-gradient(circle at 80% 80%, rgba(255, 247, 231, 0.45), transparent 24%);
+  pointer-events: none;
+}
+
+.app-shell::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: -4%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(215, 178, 217, 0.18);
+  filter: blur(32px);
+  pointer-events: none;
+}
+
+.app-shell__header {
+  position: relative;
+  padding: 46px 46px 40px;
+  border-radius: 40px;
+  background: radial-gradient(circle at 12% 14%, rgba(255, 242, 246, 0.98), transparent 20%),
+    radial-gradient(circle at 85% 18%, rgba(225, 141, 199, 0.24), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 241, 247, 0.98) 24%, rgba(245, 221, 235, 0.98) 52%, rgba(255, 255, 255, 0.99) 100%);
+  box-shadow: 0 36px 130px rgba(22, 18, 48, 0.20);
+  border: 1px solid rgba(213, 191, 226, 0.38);
+  margin-bottom: 34px;
+  overflow: hidden;
+}
+
+.app-shell__header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(247, 214, 234, 0.48), transparent 22%),
+    radial-gradient(circle at 78% 18%, rgba(255, 229, 239, 0.40), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06), transparent 32%),
+    radial-gradient(circle at 30% 85%, rgba(230, 200, 230, 0.06), transparent 30%),
+    linear-gradient(130deg, rgba(236, 156, 202, 0.12), rgba(255, 255, 255, 0.02));
+  background-blend-mode: screen, normal;
+  pointer-events: none;
+}
+
+.app-shell__header::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 420px;
+  height: 180px;
+  border-radius: 160px 240px 100px 80px;
+  background-image:
+    radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.82), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.04)),
+    linear-gradient(215deg, rgba(233, 152, 204, 0.24), rgba(255, 255, 255, 0.04));
+  transform: rotate(12deg);
+  filter: blur(1.4px);
+  pointer-events: none;
+}
+
+.app-shell__header-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 120px minmax(320px, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.app-shell__palette {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(249, 239, 245, 0.96);
+  box-shadow: inset 0 0 0 1px rgba(141, 79, 154, 0.1);
+}
+
+.palette-swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(80, 39, 134, 0.12);
+}
+
+.swatch-1 { background: #dd7f84; }
+.swatch-2 { background: #f2d3b5; }
+.swatch-3 { background: #9c7bb0; }
+.swatch-4 { background: #f7f0de; }
+
+.app-shell__brand {
+  min-height: 188px;
+}
+
+.app-shell__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #7d6a9e;
+}
+
+.app-shell__brand h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+}
+
+.app-shell__brand p {
+  margin: 18px 0 0;
+  color: #4f4b5b;
+  font-size: 1.05rem;
+  max-width: 42rem;
+  line-height: 1.8;
+}
+
+.app-shell__header-artwork {
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.app-shell__header-artwork::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: radial-gradient(circle at 18% 25%, rgba(255, 246, 239, 0.96), transparent 30%),
+    radial-gradient(circle at 80% 16%, rgba(227, 91, 78, 0.08), transparent 26%);
+  pointer-events: none;
+}
+
+.header-wave {
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.96;
+  pointer-events: none;
+}
+
+.wave-1 {
+  width: 360px;
+  height: 42px;
+  background: linear-gradient(90deg, rgba(178, 29, 31, 0.96), rgba(218, 79, 85, 0.98));
+  top: 30%;
+  right: -52px;
+  transform: rotate(-14deg);
+  filter: blur(0.15px);
+}
+
+.wave-2 {
+  width: 320px;
+  height: 32px;
+  background: linear-gradient(90deg, rgba(214, 108, 124, 0.95), rgba(255, 236, 229, 0.9));
+  top: 38%;
+  right: -18px;
+  transform: rotate(-14deg);
+}
+
+.wave-3 {
+  width: 280px;
+  height: 26px;
+  background: linear-gradient(90deg, rgba(235, 199, 199, 0.92), rgba(255, 248, 244, 0.8));
+  top: 50%;
+  right: 12px;
+  transform: rotate(-11deg);
+}
+
+.wave-4 {
+  position: absolute;
+  width: 300px;
+  height: 22px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  top: 62%;
+  right: 0px;
+  transform: rotate(-11deg);
+  opacity: 0.9;
+}
+
+.wave-5 {
+  position: absolute;
+  width: 220px;
+  height: 14px;
+  background: linear-gradient(90deg, rgba(184, 79, 99, 0.95), rgba(255, 255, 255, 0));
+  top: 44%;
+  right: -6px;
+  transform: rotate(-16deg);
+  opacity: 0.88;
+}
+
+.header-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.75;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .app-shell__header {
+    padding: 32px 24px 24px;
+    border-radius: 30px;
+  }
+
+  .app-shell__header::after {
+    width: 280px;
+    height: 120px;
+    top: 12px;
+    right: 12px;
+    transform: rotate(10deg);
+  }
+
+  .app-shell__header-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .app-shell__palette {
+    justify-self: start;
+    width: min(100%, 360px);
+  }
+
+  .app-shell__brand {
+    min-height: auto;
+  }
+
+  .app-shell__brand p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .app-shell__header {
+    padding: 28px 18px 20px;
+    border-radius: 24px;
+  }
+
+  .app-shell__header::after {
+    width: 220px;
+    height: 100px;
+    top: 10px;
+    right: 10px;
+    opacity: 0.85;
+  }
+
+  .app-shell__header-grid {
+    gap: 16px;
+  }
+
+  .app-shell__palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .app-shell__eyebrow {
+    letter-spacing: 0.18em;
+  }
+
+  .app-shell__brand h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .app-shell__brand p {
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.dot-1 {
+  width: 84px;
+  height: 84px;
+  background: rgba(216, 186, 210, 0.26);
+  top: 14%;
+  left: 18px;
+}
+
+.dot-2 {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 245, 240, 0.96);
+  bottom: 18%;
+  right: 18px;
+}
+
+.app-shell__main {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.app-container {
+  flex: 1 1 720px;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 36px;
+  padding: 32px;
+  box-shadow: 0 24px 70px rgba(20, 16, 46, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+.app-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(115, 89, 196, 0.08);
+  pointer-events: none;
+}
+
+.app-container__panel {
+  max-width: 100%;
+}
+
+.app-container__panel h2 {
+  margin-top: 0;
+  font-size: 1.95rem;
+}
+
+.app-container__panel p {
+  margin: 12px 0 0;
+  line-height: 1.75;
+  color: #4f4b5b;
+}

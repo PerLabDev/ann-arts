@@ -1,0 +1,47 @@
+<section class="galeria-root">
+  <h2 class="galeria-title">Galería</h2>
+
+  <div class="galeria-grid" role="list">
+    <div
+      class="galeria-item"
+      role="listitem"
+      *ngFor="let img of images; let i = index"
+      [style.animationDelay]="(i * 80) + 'ms'"
+      (click)="openGallery(i)"
+      tabindex="0"
+      aria-label="Abrir obra {{ i + 1 }}"
+    >
+      <img [src]="img.thumbnailImageSrc" [alt]="img.alt" loading="lazy" decoding="async" fetchpriority="low" />
+    </div>
+  </div>
+
+  <div *ngIf="showGallery" class="galleria-overlay" (click)="closeGallery()">
+    <div class="galleria-close" aria-label="Cerrar galería" (click)="closeGallery()">
+      <i class="pi pi-times" style="font-size: 1.5rem"></i>
+    </div>
+    <div class="galleria-dialog" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
+      <p-galleria
+        class="custom-galleria"
+        [value]="images"
+        [(activeIndex)]="selectedIndex"
+        [numVisible]="5"
+        [circular]="true"
+        [showItemNavigators]="true"
+        [showThumbnails]="false"
+        [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ width: '100%', margin: '0 auto', padding: '0' }"
+      >
+        <ng-template #item let-item>
+          <img
+            [src]="item.itemImageSrc"
+            [alt]="item.alt"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+            style="width: 70%; height: auto; display: block;"
+          />
+        </ng-template>
+      </p-galleria>
+    </div>
+  </div>
+</section>

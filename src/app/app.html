@@ -1,0 +1,24 @@
+<div class="app-shell">
+  <header class="app-shell__header">
+    <div class="app-shell__header-grid">
+      <div class="app-shell__palette" aria-label="Paleta de pintor">
+        <div class="palette-swatch swatch-1"></div>
+        <div class="palette-swatch swatch-2"></div>
+        <div class="palette-swatch swatch-3"></div>
+        <div class="palette-swatch swatch-4"></div>
+      </div>
+
+      <div class="app-shell__brand">
+        <span class="app-shell__eyebrow">Galería de arte</span>
+        <h1>{{ title() }}</h1>
+        <p>Una vitrina elegante para obras, exposiciones y contenido creativo.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell__main">
+    <section class="app-container">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
