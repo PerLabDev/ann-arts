@@ -43,5 +43,9 @@
         </ng-template>
       </p-galleria>
     </div>
+
+    <div class="galleria-caption" (click)="$event.stopPropagation()">
+      Disponible: {{ images[selectedIndex].availability }}
+    </div>
   </div>
 </section>

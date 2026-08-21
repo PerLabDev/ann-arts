@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PRIMENG_COMPONENTS } from '../../shared/primeng-shared';
+import { imgsGallery } from './galeria-data';
 
 @Component({
   selector: 'app-galeria',
@@ -13,14 +14,12 @@ export class Galeria {
   showGallery = false;
   selectedIndex = 0;
 
-  images = Array.from({ length: 17 }, (_, index) => {
-    const number = index + 1;
-    return {
-      itemImageSrc: `assets/${number}.jpeg`,
-      thumbnailImageSrc: `assets/${number}.jpeg`,
-      alt: `Obra ${number}`
-    };
-  });
+  images = imgsGallery.map((image) => ({
+    ...image,
+    itemImageSrc: `assets/${image.number}.jpeg`,
+    thumbnailImageSrc: `assets/${image.number}.jpeg`,
+    alt: `Obra ${image.number}`
+  }));
 
   responsiveOptions = [
     { breakpoint: '1024px', numVisible: 5 },
